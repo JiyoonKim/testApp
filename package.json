@@ -1,8 +1,7 @@
 {
-  "name": "testApp",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "Snowpalm",
+  "author": "O2palm, Inc.",
+  "homepage": "http://www.o2palm.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -12,6 +11,7 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
+    "@angular/animations": "4.1.2",
     "@angular/common": "4.1.2",
     "@angular/compiler": "4.1.2",
     "@angular/compiler-cli": "4.1.2",
@@ -20,27 +20,93 @@
     "@angular/http": "4.1.2",
     "@angular/platform-browser": "4.1.2",
     "@angular/platform-browser-dynamic": "4.1.2",
+    "@angular/platform-server": "4.1.2",
+    "@angular/router": "4.1.2",
+    "@ionic-native/app-version": "3.12.1",
+    "@ionic-native/camera": "4.1.0",
+    "@ionic-native/contacts": "3.12.1",
     "@ionic-native/core": "3.12.1",
+    "@ionic-native/device": "3.2.4",
+    "@ionic-native/facebook": "^4.2.1",
+    "@ionic-native/file": "4.1.0",
+    "@ionic-native/file-path": "4.1.0",
+    "@ionic-native/google-plus": "^4.2.1",
+    "@ionic-native/image-picker": "3.12.1",
+    "@ionic-native/keyboard": "3.3.0",
     "@ionic-native/linkedin": "^4.2.1",
+    "@ionic-native/local-notifications": "3.13.1",
     "@ionic-native/native-storage": "^4.2.1",
+    "@ionic-native/screenshot": "3.2.4",
+    "@ionic-native/social-sharing": "3.4.3",
     "@ionic-native/splash-screen": "3.3.0",
     "@ionic-native/status-bar": "3.3.0",
+    "@ionic-native/transfer": "3.14.0",
+    "@ionic/app-scripts": "1.3.7",
     "@ionic/storage": "2.0.0",
+    "angular2-swing": "0.11.0",
+    "angular2-swiper": "0.8.1",
+    "com.darktalker.cordova.screenshot": "git+https://github.com/gitawego/cordova-screenshot.git",
+    "com.dbaq.cordova.contactsPhoneNumbers": "https://github.com/dbaq/cordova-plugin-contacts-phone-numbers.git",
+    "cordova": "6.5.0",
+    "cordova-android": "6.2.3",
+    "cordova-ios": "4.4.0",
+    "cordova-plugin-app-version": "0.1.9",
+    "cordova-plugin-camera": "2.4.1",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-console": "1.0.7",
+    "cordova-plugin-contacts-phonenumbers": "git+https://github.com/dbaq/cordova-plugin-contacts-phone-numbers.git",
+    "cordova-plugin-device": "1.1.6",
+    "cordova-plugin-file": "4.3.3",
+    "cordova-plugin-file-transfer": "1.6.3",
+    "cordova-plugin-filepath": "1.0.2",
+    "cordova-plugin-splashscreen": "4.0.3",
+    "cordova-plugin-statusbar": "2.2.3",
+    "cordova-plugin-whitelist": "1.3.1",
+    "cordova-plugin-wkwebview-engine": "git+https://github.com/driftyco/cordova-plugin-wkwebview-engine.git",
+    "cordova-plugin-x-socialsharing": "5.1.8",
+    "cordova-sqlite-storage": "2.0.4",
+    "de.appplant.cordova.plugin.local-notification": "0.8.5",
+    "dot": "1.1.2",
+    "es6-promise-plugin": "4.1.0",
+    "gulp": "3.9.1",
+    "immutable": "3.8.1",
+    "ionic": "2.1.3",
     "ionic-angular": "3.3.0",
-    "ionic-native": "^2.9.0",
+    "ionic-native": "2.9.0",
+    "ionic-plugin-keyboard": "2.2.1",
     "ionicons": "3.0.0",
+    "masonry-layout": "4.2.0",
+    "moment": "2.18.1",
+    "ng2-translate": "5.0.0",
+    "rrule": "2.2.0",
     "rxjs": "5.1.1",
     "sw-toolbox": "3.4.0",
-    "zone.js": "0.8.11",
-    "cordova-plugin-camera": "2.4.1"
+    "typescript": "2.3.4",
+    "web-animations-js": "2.2.5",
+    "zone.js": "0.8.11"
   },
   "devDependencies": {
     "@angular/tsc-wrapped": "^4.4.0-RC.0",
     "@ionic/app-scripts": "1.3.7",
     "@ionic/cli-plugin-cordova": "1.4.1",
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
+    "child_process": "1.0.2",
+    "cross-spawn": "5.1.0",
+    "gulp": "3.9.1",
+    "gulp-change": "1.0.0",
+    "gulp-file": "0.3.0",
+    "ip": "1.1.5",
+    "lodash": "4.17.4",
     "typescript": "2.3.4"
   },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-console",
+    "ionic-plugin-keyboard"
+  ],
   "cordovaPlatforms": [
     "ios",
     {
@@ -49,5 +115,36 @@
       "locator": "ios"
     }
   ],
-  "description": "An Ionic project"
+  "description": "Snowpalm: An Ionic project",
+  "config": {
+    "ionic_source_map": "source_map"
+  },
+  "cordova": {
+    "plugins": {
+      "com.darktalker.cordova.screenshot": {},
+      "com.dbaq.cordova.contactsPhoneNumbers": {},
+      "cordova-plugin-app-version": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": " ",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+      },
+      "cordova-plugin-console": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-sqlite-storage": {},
+      "de.appplant.cordova.plugin.local-notification": {},
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-filepath": {}
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
 }
