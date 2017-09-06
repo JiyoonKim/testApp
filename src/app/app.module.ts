@@ -11,8 +11,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// providers
+import { Backend } from '../providers/backend';
+import { System } from '../providers/system';
+
+// modules
+import { IonicStorageModule } from '@ionic/storage';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
+
+// test
 import { LinkedIn } from '@ionic-native/linkedin';
 import { NativeStorage } from '@ionic-native/native-storage';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +35,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +52,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LinkedIn,
-    NativeStorage
+    NativeStorage,
+    System,
+    Backend
   ]
 })
 export class AppModule {}

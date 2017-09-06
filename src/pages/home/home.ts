@@ -3,6 +3,9 @@ import { NavController, NavParams, Platform } from 'ionic-angular';
 
 import { Camera } from 'ionic-native';
 
+// provider
+import { System } from '../../providers/system';
+
 
 @Component({
   selector: 'page-home',
@@ -23,14 +26,27 @@ export class HomePage {
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
         private platform: Platform,
+        private sys: System
         ) {
+        let id = sys.user.id;
 
         this.platform.ready().then(() => {
             this._camera = Camera;
+            this.getAccount(id);
         });
 
         this.getImageOptions = ['Photo Library', 'Camera'];
     }
+
+    // linkedin server
+    getAccount(id) {
+        this.sys.getAccount(id).subscribe(res => console.log('server res ', res));
+    }
+
+
+
+
+
 
     select(e) {
         if (e == 'Photo Library') {

@@ -1,0 +1,1 @@
+export let data = { host: "http://192.168.1.230:3100", gid: "f8769028c14dd0d526f93de1911d49692466dda7" }
