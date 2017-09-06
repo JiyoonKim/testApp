@@ -348,7 +348,17 @@ export class System {
 
     // // user information
     get user(): any { return this.appConfig.user; }
-    set user(user: any) { this.appConfig.user = user; if (user.token) this.storeToken(user.token); }
+    set user(user: any) {
+        this.appConfig.user = user;
+        if (user.token) {
+            this.storeToken(user.token)
+        } else {
+            // for testing ----------------------
+            user.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5MzBkMWI4NzcyNGU2MTZiMTU3MjRmNiIsInVpZCI6IjExMTEiLCJlbWFpbCI6IiIsIm5hbWUiOiJ3d3cgcHBwIiwiaWF0IjoxNTA0NzE2MTYwLCJleHAiOjE1MDQ4MDI1NjB9.4JhIlZsqw3PKAtEM__T6OfTKDcew6y1yuSyXUyTzG2g";
+
+            console.log('test token -----------', user.token)
+        }
+    }
 
 
     // -----------------------
@@ -532,7 +542,7 @@ export class System {
 	// 	console.log("global device: " + JSON.stringify(info));
 	// }
 
-	
+
 
 	// // ------------------------------
 	// // internationalize
@@ -949,7 +959,7 @@ export class System {
  //    // }
 
 
-	
+
 
 	// // temp parameter passing from child to parent
 	// get passParam(): any { return this.tempParam; }
